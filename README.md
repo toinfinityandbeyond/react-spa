@@ -39,8 +39,9 @@ Then open [http://localhost:8080/](http://localhost:8080/) on your web browser.
 ### Testing
 
 1. Run `npm test` for simple test.
-2. Run `npm run test:watch` for watch tests.
-3. Run `npm run test:coverage` for test coverage. This will generate a `coverage` folder. Open the `index.html` file in this folder to check the results.
+2. Run `npm run lint` for ensure your code is syntactically correct.
+3. Run `npm run test:watch` for watch tests.
+4. Run `npm run test:coverage` for test coverage. This will generate a `coverage` folder. Open the `index.html` file in this folder to check the results.
 
 ## Deploying
 

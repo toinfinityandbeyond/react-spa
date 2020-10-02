@@ -1,12 +1,10 @@
 {
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["airbnb"],
   "globals": {
     "document": true,
     "window": true,
     "location": true,
-    "hljs": true,
+    "hljs": true
   },
   "rules": {
     "react/react-in-jsx-scope": ["off"],
@@ -16,5 +14,6 @@
     "jsx-a11y/no-static-element-interactions": ["off"],
     "class-methods-use-this": ["off"],
     "no-use-before-define": ["off"],
+    "quotes": ["off"]
   }
 }
