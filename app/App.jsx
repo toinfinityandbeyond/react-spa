@@ -1,45 +1,38 @@
 import React, { Component } from "react";
-import Main from "./src/Main";
 
-const $ = require("jquery");
+import { Container, Row } from "react-bootstrap";
 
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
+
+import Header from "./src/layout/Header";
+import ProductList from "./src/pages/productlist/ProductList";
+import Product from "./src/pages/product/Product";
+
+const routes = [
+  { id: 1, path: `/`, name: `Product List`, ComponentRender: ProductList },
+  { id: 2, path: `/:id`, name: `Product`, ComponentRender: Product },
+];
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      link: "/",
-      breadcrums: [{ title: `Product List`, href: `/` }],
-    };
-
-    this.handleLink = this.handleLink.bind(this);
-  }
-
-  componentWillMount() {
-    this.setState({ link: window.location.hash.replace("#", "") });
-  }
-
-  componentDidMount() {
-    $("pre code").each((i, block) => {
-      hljs.highlightBlock(block);
-    });
-  }
-
-  componentDidUpdate() {
-    $("pre code").each((i, block) => {
-      hljs.highlightBlock(block);
-    });
-  }
-
-  handleLink(link) {
-    window.location.hash = link;
-    this.setState({ link });
-  }
-
   render() {
-    const { link } = this.state;
-
-    return <Main link={link} handleLink={this.handleLink} />;
+    return (
+      <Router>
+        <Header routes={routes} />
+        <Container className="main" fluid>
+          <Row>
+            <Switch>
+              <Route exact path="/" component={ProductList} />
+              <Route path="/:id" component={Product} />
+            </Switch>
+          </Row>
+        </Container>
+      </Router>
+    );
   }
 }
 

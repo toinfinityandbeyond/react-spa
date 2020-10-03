@@ -29,14 +29,11 @@ class ProductList extends Component {
   }
   renderItems() {
     const { products } = this.state;
-    const { handleLink } = this.props;
-    return products.map((product) => {
-      return (
-        <Col>
-          <ProductItem info={product} handleLink={handleLink} />
-        </Col>
-      );
-    });
+    return products.map((product) => (
+      <Col key={product.id}>
+        <ProductItem info={product} />
+      </Col>
+    ));
   }
   render() {
     return (
@@ -53,9 +50,5 @@ class ProductList extends Component {
     );
   }
 }
-
-ProductList.propTypes = {
-  handleLink: PropTypes.func.isRequired,
-};
 
 export default ProductList;
