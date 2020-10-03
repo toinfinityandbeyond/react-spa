@@ -1,0 +1,11 @@
+.header {
+  padding: 40px 200px;
+  background-color: #444;
+}
+
+.logo-holder {
+  fill: #fff;
+}
+.logo-holder svg {
+  width: 400px;
+}
