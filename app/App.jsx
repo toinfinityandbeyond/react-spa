@@ -3,16 +3,19 @@ import PropTypes from "prop-types";
 import { Container, Row } from "react-bootstrap";
 import { Provider } from "react-redux";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 import Header from "./src/components/Header/Header";
 import ProductList from "./src/pages/productlist/ProductList";
 import Product from "./src/pages/product/Product";
 
+const history = createBrowserHistory();
+
 class App extends Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <Router>
+        <Router history={history}>
           <Header />
           <Container className="main" fluid>
             <Row>

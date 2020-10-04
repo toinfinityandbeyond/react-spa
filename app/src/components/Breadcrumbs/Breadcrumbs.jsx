@@ -2,8 +2,7 @@ import React from "react";
 import Breadcrumbs from "react-router-dynamic-breadcrumbs";
 
 import { HashRouter as Router } from "react-router-dom";
-
-require("./Breadcrumbs.css");
+import "./Breadcrumbs.css";
 
 const routesList = {
   "/": "Product List",

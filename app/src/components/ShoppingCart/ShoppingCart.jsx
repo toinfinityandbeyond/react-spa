@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
-require("./ShoppingCart.css");
+import "./ShoppingCart.css";
 // eslint-disable-next-line
 class ShoppingCart extends React.Component {
   render() {

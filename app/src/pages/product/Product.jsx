@@ -4,8 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import * as Utils from "../../utils/utils";
-
-require("./Product.css");
+import "./Product.css";
 
 class Product extends Component {
   constructor(props) {

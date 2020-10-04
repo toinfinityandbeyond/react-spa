@@ -3,10 +3,9 @@ import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 
 import ProductItem from "../../components/ProductItem/ProductItem";
 import * as Utils from "../../utils/utils";
+import "./ProductList.css";
 
-require("./ProductList.css");
-
-class ProductList extends Component {
+export default class ProductList extends Component {
   constructor(props) {
     super(props);
 
@@ -99,5 +98,3 @@ class ProductList extends Component {
     );
   }
 }
-
-export default ProductList;

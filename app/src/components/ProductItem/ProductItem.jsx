@@ -4,8 +4,7 @@ import slugify from "slugify";
 import { Image } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
-
-require("./ProductItem.css");
+import "./ProductItem.css";
 
 class ProductItem extends Component {
   render() {
