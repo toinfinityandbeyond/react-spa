@@ -10,7 +10,7 @@ const routesList = {
   "/:name": null,
   "/:name/:id": (url, match) => `${match[":name"].replace(/-/g, " ")}`,
 };
-// eslint-disable-next-line
+
 export default class AppBreadcrumbs extends React.Component {
   render() {
     return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import AppBreadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
-import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
+import AppBreadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 require("./Header.css");
 
@@ -21,7 +21,7 @@ const Header = () => (
               <Image
                 className="logo"
                 src="logo.png"
-                alt="Compra los mejores moviles"
+                alt="Compra los mejores móviles"
               />
             </Link>
           </Col>

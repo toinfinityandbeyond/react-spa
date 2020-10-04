@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
-
 require("./ShoppingCart.css");
 // eslint-disable-next-line
 export default class ShoppingCart extends React.Component {

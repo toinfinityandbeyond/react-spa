@@ -4,19 +4,15 @@ import { Container, Row } from "react-bootstrap";
 
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./src/layout/Header";
+import Header from "./src/components/Header/Header";
 import ProductList from "./src/pages/productlist/ProductList";
 import Product from "./src/pages/product/Product";
 
-const routes = [
-  { id: 1, path: `/`, name: `Product List`, ComponentRender: ProductList },
-  { id: 2, path: `/:id`, name: `Product`, ComponentRender: Product },
-];
 class App extends Component {
   render() {
     return (
       <Router>
-        <Header routes={routes} />
+        <Header />
         <Container className="main" fluid>
           <Row>
             <Switch>
