@@ -2,13 +2,7 @@ import React, { Component } from "react";
 
 import { Container, Row } from "react-bootstrap";
 
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./src/layout/Header";
 import ProductList from "./src/pages/productlist/ProductList";

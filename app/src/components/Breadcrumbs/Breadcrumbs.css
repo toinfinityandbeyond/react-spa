@@ -1,0 +1,12 @@
+.breadcrumb {
+  background-color: transparent;
+  padding: 0px;
+  font-size: 0.9rem;
+}
+.breadcrumb-item.active {
+  color: #f0f0f0;
+}
+.breadcrumb-item a {
+  color: #f0f0f0;
+  text-decoration: underline;
+}

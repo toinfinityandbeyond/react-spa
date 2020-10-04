@@ -9,7 +9,12 @@ const Header = () => (
   <Container fluid className="header">
     <Row>
       <Container>
-        <Row>
+        <Row
+          lg={{ cols: 2 }}
+          md={{ cols: 2 }}
+          sm={{ cols: 1 }}
+          xs={{ cols: 1 }}
+        >
           <Col>
             <Link to="/">
               <div className="logo-holder">
@@ -24,6 +29,8 @@ const Header = () => (
               </div>
             </Link>
           </Col>
+        </Row>
+        <Row>
           <Col>
             <AppBreadcrumbs />
           </Col>

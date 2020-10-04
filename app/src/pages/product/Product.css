@@ -1,0 +1,13 @@
+.product {
+  margin-top: 40px;
+}
+
+.product .right {
+  padding: 18px;
+}
+
+.product .title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 20px;
+}

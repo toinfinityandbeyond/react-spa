@@ -16,6 +16,8 @@
     "no-use-before-define": ["off"],
     "quotes": ["off"],
     "max-len": ["off"],
-    "arrow-parens": ["off"]
+    "arrow-parens": ["off"],
+    "react/prefer-stateless-function": ["off"],
+    "arrow-body-style": ["off"]
   }
 }

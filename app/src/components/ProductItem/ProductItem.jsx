@@ -10,9 +10,14 @@ class ProductItem extends Component {
     const { info } = this.props;
 
     return (
-      <Link to={`/${info.id}`} id={info.id}>
+      <Link to={`/${info.id}`}>
         <div className="product-item" key={`${info.id}`}>
-          <img className="image" alt={`${info.model}`} src={`${info.imgUrl}`} />
+          <img
+            width="100%"
+            className="image"
+            alt={`${info.model}`}
+            src={`${info.imgUrl}`}
+          />
           <p>{`${info.model}`}</p>
           <small>{`${info.brand}`}</small>
           <p>{`${info.price}`}€</p>
