@@ -21,7 +21,7 @@ class App extends Component {
           <Row>
             <Switch>
               <Route exact path="/" component={ProductList} />
-              <Route path="/:id" component={Product} />
+              <Route path="/:name/:id" component={Product} />
             </Switch>
           </Row>
         </Container>

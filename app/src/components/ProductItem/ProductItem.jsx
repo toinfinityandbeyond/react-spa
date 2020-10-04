@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import slugify from "slugify";
+import { Image } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -10,9 +12,9 @@ class ProductItem extends Component {
     const { info } = this.props;
 
     return (
-      <Link to={`/${info.id}`}>
-        <div className="product-item" key={`${info.id}`}>
-          <img
+      <Link to={`/${slugify(info.model)}/${info.id}`}>
+        <div className="product-item">
+          <Image
             width="100%"
             className="image"
             alt={`${info.model}`}
@@ -20,7 +22,7 @@ class ProductItem extends Component {
           />
           <p>{`${info.model}`}</p>
           <small>{`${info.brand}`}</small>
-          <p>{`${info.price}`}€</p>
+          {info.price ? <p>{`${info.price}`}€</p> : <p>&nbsp;</p>}
         </div>
       </Link>
     );

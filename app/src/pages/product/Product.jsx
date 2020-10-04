@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 require("./Product.css");
 
@@ -23,10 +23,27 @@ class Product extends Component {
 
   renderTitle(properties) {
     return (
-      <div className="title">
-        <h1>{`${properties.model}`}</h1>
-        <h3>{`${properties.brand}`}</h3>
-      </div>
+      <Container className="title">
+        <Row>
+          <Col lg={9}>
+            <h1>{`${properties.model}`}</h1>
+            <h3>{`${properties.brand}`}</h3>
+          </Col>
+          {properties.price ? (
+            <Col lg={3}>
+              <h1>{properties.price} €</h1>
+            </Col>
+          ) : null}
+        </Row>
+      </Container>
+    );
+  }
+
+  renderAddToCart(properties) {
+    return (
+      <Button size="lg" className="add-to-cart pull-right">
+        Add to cart
+      </Button>
     );
   }
 
@@ -69,28 +86,34 @@ class Product extends Component {
     if (properties.options) {
       const { colors, storages } = properties.options;
       return (
-        <div>
-          {colors ? (
-            <Form.Group controlId="exampleForm.colors">
-              <Form.Label>Colors</Form.Label>
-              <Form.Control as="select">
-                {colors.map((color) => (
-                  <option key={color.code}>{color.name}</option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-          ) : null}
-          {storages ? (
-            <Form.Group controlId="exampleForm.colors">
-              <Form.Label>Storages</Form.Label>
-              <Form.Control as="select">
-                {storages.map((storage) => (
-                  <option key={storage.code}>{storage.name}</option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-          ) : null}
-        </div>
+        <Container>
+          <Row>
+            {colors ? (
+              <Col>
+                <Form.Group controlId="exampleForm.colors">
+                  <Form.Label>Colors</Form.Label>
+                  <Form.Control as="select">
+                    {colors.map((color) => (
+                      <option key={color.code}>{color.name}</option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+              </Col>
+            ) : null}
+            {storages ? (
+              <Col>
+                <Form.Group controlId="exampleForm.colors">
+                  <Form.Label>Storages</Form.Label>
+                  <Form.Control as="select">
+                    {storages.map((storage) => (
+                      <option key={storage.code}>{storage.name}</option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+              </Col>
+            ) : null}
+          </Row>
+        </Container>
       );
     }
     return null;
@@ -107,20 +130,19 @@ class Product extends Component {
             sm={{ cols: 1 }}
             xs={{ cols: 1 }}
           >
-            <Col>
-              <div className="left">
-                <img
-                  width="100%"
-                  alt={properties.model}
-                  src={properties.imgUrl}
-                />
-              </div>
+            <Col className="left" lg={4}>
+              <img
+                width="100%"
+                alt={properties.model}
+                src={properties.imgUrl}
+              />
             </Col>
-            <Col>
+            <Col lg={8}>
               <Form className="right">
                 {this.renderTitle(properties)}
                 {this.renderProperties(properties)}
                 {this.renderOptions(properties)}
+                {this.renderAddToCart(properties)}
               </Form>
             </Col>
           </Row>

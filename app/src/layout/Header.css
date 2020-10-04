@@ -3,9 +3,11 @@
   background-color: #444;
 }
 
-.logo-holder {
-  fill: #fff;
+.header .logo {
+  width: 100%;
 }
-.logo-holder svg {
-  width: 400px;
+
+.header .breadcrumbs {
+  height: 24px;
+  margin-top: 16px;
 }
