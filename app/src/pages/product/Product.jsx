@@ -1,6 +1,7 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import * as Utils from "../../utils/utils";
 
@@ -11,6 +12,8 @@ class Product extends Component {
     super(props);
     const { id } = props.match.params;
     this.state = { id, properties: {} };
+
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +45,10 @@ class Product extends Component {
           storageCode: storages.value,
         })
         .then((response) => {
-          console.log(response);
+          this.props.dispatch({
+            type: "ShoppingCart_add",
+            value: this.props.ShoppingCart.count + response.data.count,
+          });
         });
     }
   }
@@ -194,6 +200,12 @@ class Product extends Component {
 
 Product.propTypes = {
   match: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  ShoppingCart: PropTypes.object.isRequired,
 };
 
-export default Product;
+const mapStateToProps = (state) => ({
+  ShoppingCart: state.ShoppingCart,
+});
+
+export default connect(mapStateToProps)(Product);

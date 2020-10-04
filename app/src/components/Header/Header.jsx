@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Image } from "react-bootstrap";
+
 import AppBreadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 

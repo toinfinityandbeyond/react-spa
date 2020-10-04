@@ -5,3 +5,10 @@
 .shopping-cart .icon {
   font-size: 3em;
 }
+.shopping-cart .items {
+  position: relative;
+  top: -40px;
+  color: #444;
+  left: 2px;
+  font-weight: bold;
+}
