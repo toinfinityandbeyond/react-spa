@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { Component } from "react";
 import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 
 import ProductItem from "../../components/ProductItem/ProductItem";
+import * as Utils from "../../utils/utils";
 
 require("./ProductList.css");
 
@@ -21,16 +21,22 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://front-test-api.herokuapp.com/api/product`)
-      .then((response) => {
-        this.setState({ products: response.data, allProducts: response.data });
-      });
+    Utils.cachedFetch(`https://front-test-api.herokuapp.com/api/product`, {
+      method: "get",
+      seconds: 3600,
+    }).then((response) => {
+      response
+        .clone()
+        .json()
+        .then((content) => {
+          this.setState({ products: content, allProducts: content });
+        });
+    });
   }
   handleChange(event) {
     const text = event.target.value;
     if (text.length) {
-      const products = this.state.products.filter((product) => {
+      const products = this.state.allProducts.filter((product) => {
         return (
           product.brand.toLowerCase().includes(text.toLowerCase()) ||
           product.model.toLowerCase().includes(text.toLowerCase())

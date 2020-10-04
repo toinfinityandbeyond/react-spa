@@ -2,6 +2,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import * as Utils from "../../utils/utils";
 
 require("./Product.css");
 
@@ -13,11 +14,21 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://front-test-api.herokuapp.com/api/product/${this.state.id}`)
-      .then((response) => {
-        this.setState({ properties: response.data });
-      });
+    const { id } = this.state;
+    Utils.cachedFetch(
+      `https://front-test-api.herokuapp.com/api/product/${id}`,
+      {
+        method: "get",
+        seconds: 3600,
+      }
+    ).then((response) => {
+      response
+        .clone()
+        .json()
+        .then((content) => {
+          this.setState({ properties: content });
+        });
+    });
   }
 
   addToCart(event) {

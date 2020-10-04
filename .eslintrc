@@ -18,6 +18,8 @@
     "max-len": ["off"],
     "arrow-parens": ["off"],
     "react/prefer-stateless-function": ["off"],
-    "arrow-body-style": ["off"]
+    "arrow-body-style": ["off"],
+    "no-param-reassign": ["off"],
+    "comma-dangle": ["off"]
   }
 }
