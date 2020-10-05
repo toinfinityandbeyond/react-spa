@@ -37,7 +37,3 @@ Then open [http://localhost:8080/](http://localhost:8080/) on your web browser.
 ## Deploying
 
 For deployment, run `npm run build` and upload `build/` to your server.
-
-## License
-
-MIT · [Lucas Bassetti](http://lucasbassetti.com.br)
