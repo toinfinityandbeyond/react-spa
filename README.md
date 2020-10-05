@@ -17,8 +17,8 @@ This boilerplate belongs to [Lucas Bassetti](http://lucasbassetti.com.br)
 Run the following commands in your terminal
 
 ```bash
-git clone https://github.com/LucasBassetti/react-spa-boilerplate.git
-cd react-spa-boilerplate
+git clone https://github.com/toinfinityandbeyond/react-spa.git
+cd react-spa
 npm install
 npm start
 ```
