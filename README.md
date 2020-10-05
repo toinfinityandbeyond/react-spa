@@ -1,17 +1,6 @@
-# React SPA Boilerplate
+# React SPA
 
-React SPA boilerplate for open source project
-
-<a href="http://lucasbassetti.com.br/react-spa-boilerplate/" target="_blank"> <img src="https://cloud.githubusercontent.com/assets/1014326/25073696/406d6aa6-22c2-11e7-99fd-3d09d09b37d6.png" width="600"  />
-</a>
-
-## Features
-
-- Simple `index.html` loading `bundle.js`.
-- Starter `index.jsx` for React.
-- All code following Airbnb's JavaScript (ES6) style guide with ESlint.
-- Webpack dev server with automatic reloading. Start with: `npm start`.
-- Deployment build with `npm run build`.
+This boilerplate belongs to [Lucas Bassetti](http://lucasbassetti.com.br)
 
 ## Components
 
@@ -23,7 +12,7 @@ React SPA boilerplate for open source project
 - [React](https://facebook.github.io/react/) as front-end view library.
 - [Webpack](https://webpack.github.io) for bundling of JavaScript modules.
 
-## Getting Start
+## Getting Started
 
 Run the following commands in your terminal
 
@@ -36,12 +25,14 @@ npm start
 
 Then open [http://localhost:8080/](http://localhost:8080/) on your web browser.
 
-### Testing
+### Scripts
 
 1. Run `npm test` for simple test.
 2. Run `npm run lint` for ensure your code is syntactically correct.
 3. Run `npm run test:watch` for watch tests.
 4. Run `npm run test:coverage` for test coverage. This will generate a `coverage` folder. Open the `index.html` file in this folder to check the results.
+5. Run `npm run build` for deployment build.
+6. Webpack dev server with automatic reloading. Start with: `npm start`.
 
 ## Deploying
 
